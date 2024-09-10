@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NTIS Results</title>
+    <style>
+        body {
+            background-color: #000;
+            color: #fff;
+            font-family: Consolas, 'Courier New', monospace;
+            text-align: center;
+        }
+        .container {
+            width: 50%;
+            margin: 0 auto;
+            padding: 20px;
+            border: 1px solid #fff;
+        }
+        h1 {
+            margin-bottom: 20px;
+        }
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        li {
+            margin-bottom: 10px;
+            background-color: #222;
+            padding: 10px;
+            border-radius: 8px;
+        }
+        a {
+            color: #00f;
+        }
+        a:hover {
+            color: #fff;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Threat Detection Results</h1>
+
+        <div>
+            <h2>Results Summary</h2>
+            <ul>
+                {% for threat, details in results.items() %}
+                    <li><strong>{{ threat }}:</strong> {{ details | join(', ') }}</li>
+                {% endfor %}
+            </ul>
+        </div>
+
+        <div>
+            <h2>Download Results</h2>
+            <form action="{{ url_for('download_csv') }}" method="POST">
+                <button type="submit" style="background-color: #00f; color: #fff; border: none; padding: 10px 20px; border-radius: 8px; cursor: pointer;">Download Results as CSV</button>
+            </form>
+        </div>
+    </div>
+</body>
+</html>

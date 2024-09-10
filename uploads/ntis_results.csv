@@ -1,0 +1,7 @@
+Threat Type,Details
+MAC Spoofing,No MAC Spoofing Detected
+Packet Tampering,No Packet Tampering Detected
+Replay Attack,No Replay Attack Detected
+Port Scanning,No Port Scanning Detected
+SYN Flood,No SYN Flood Detected
+ARP Spoofing,No ARP Spoofing Detected
